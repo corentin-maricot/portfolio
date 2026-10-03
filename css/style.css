@@ -7,9 +7,10 @@
 
 @font-face {
   font-family: 'Switzer';
-  src: url('fonts/Switzer-Variable.woff') format('woff');
+  src: url('../fonts/Switzer-Variable.woff') format('woff');
   font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -71,7 +72,8 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 90svh;
+  min-height: 500px;
   overflow: hidden;
   margin-bottom: 30px;
 }
@@ -403,15 +405,20 @@ body {
   gap: clamp(28px, 5vw, 64px);
 }
 
-.about__portrait {
+about__portrait {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 70vh;
+  margin-left: calc(50% - 50vw);
   overflow: hidden;
   margin-bottom: 30px;
 }
 
-.about__portrait img { width: 100%; height: 100%; object-fit: cover; }
+.about__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .about__body p {
   font-size: clamp(16px, 1.6vw, 18px);
