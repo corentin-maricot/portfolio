@@ -405,7 +405,7 @@ body {
   gap: clamp(28px, 5vw, 64px);
 }
 
-about__portrait {
+.about__portrait {
   position: relative;
   width: 100vw;
   height: 70vh;
