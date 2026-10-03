@@ -523,113 +523,47 @@ body {
   font-weight: 400;
 }
 
-/* ---------- Mobile ---------- */
-
-@media (max-width: 720px) {
-
-  .related-projects__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-@media (max-width: 520px) {
-
-  .related-projects__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
-
-  .related-project h3 {
-    font-size: 16px;
-  }
-
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width: 1200px) {
-  .site-header__row {
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .site-nav {
-    text-align: center;
-  }
-
-  .site-nav ul {
-    justify-content: center;
-  }
-
-  .project-header__title {
-  text-align: center;
-}
-}
-
-@media (max-width: 720px) {
-  .work-grid,
-  .project-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .project-header__grid {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-
-  .project-header__title { max-width: none; }
-
-    .site-nav {
-    text-align: center;
-  }
-
-  .site-nav ul {
-    justify-content: center;
-  }
-}
-
 /* =========================================================
-   MENU MOBILE
+   RESPONSIVE
    ========================================================= */
+
+/* ---------- Menu desktop ---------- */
 
 .menu-toggle {
   display: none;
 }
 
-/* Téléphone */
-@media (max-width: 1200px) {
 
-/* =========================================================
-   MENU MOBILE
-   ========================================================= */
-
-.menu-toggle {
-  display: none;
-}
+/* ---------- Tablette / mobile ---------- */
 
 @media (max-width: 1200px) {
 
-  /* Header */
   .site-header__row {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    flex-wrap: nowrap;
   }
 
   .site-nav {
     position: relative;
+    z-index: 100;
+    text-align: center;
   }
 
-  /* Bouton hamburger */
+  /* =========================
+     BOUTON HAMBURGER
+     ========================= */
+
   .menu-toggle {
-    position: relative;
-    z-index: 100;
-    
     display: flex;
+    position: relative;
+    z-index: 101;
+
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 6px;
 
     width: 32px;
@@ -641,41 +575,59 @@ body {
     display: block;
     width: 24px;
     height: 2px;
+
     background: var(--color-ink);
 
-    transition: transform 0.25s ease, opacity 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
   }
 
+
   /* =========================
-     MENU PLEIN ÉCRAN
+     MENU MOBILE
      ========================= */
 
   .site-nav ul {
     display: none;
 
-    position: fixed;
-    inset: 0;
-    z-index: 50;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
 
-    width: 100vw;
-    height: 100vh;
+    width: 100vw !important;
+    height: 100dvh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    z-index: 100;
 
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
     gap: 20px;
-    padding: 0;
 
-    background: var(--color-bg);
+    background: #fff;
 
     font-size: 45px;
+    font-weight: 400;
+
+    transform: none;
   }
 
-  /* Menu ouvert */
+
+  /* =========================
+     MENU OUVERT
+     ========================= */
+
   .site-nav.is-open ul {
     display: flex;
   }
+
 
   /* =========================
      HAMBURGER → X
@@ -687,12 +639,67 @@ body {
 
   .site-nav.is-open .menu-toggle span:last-child {
     transform: translateY(-4px) rotate(-45deg);
-  }*
+  }
 
-    /* Bloque le scroll de la page */
+
+  /* =========================
+     BLOQUE LE SCROLL
+     ========================= */
+
   body:has(.site-nav.is-open) {
     overflow: hidden;
   }
 
+
+  /* =========================
+     TITRE PROJET
+     ========================= */
+
+  .project-header__title {
+    text-align: center;
+    font-weight: 300;
+  }
 }
+
+
+/* ---------- Petit mobile ---------- */
+
+@media (max-width: 720px) {
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery {
+    column-count: 1;
+  }
+
+  .project-header__grid {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .project-header__title {
+    max-width: none;
+    font-weight: 400;
+  }
+
+  .related-projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ---------- Très petit mobile ---------- */
+
+@media (max-width: 520px) {
+
+  .related-projects__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .related-project h3 {
+    font-size: 16px;
+  }
 }
