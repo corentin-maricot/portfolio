@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
-  <rect width="1200" height="800" fill="#dde3ea"/>
-  <g opacity="0.5">
-    <circle cx="936.0" cy="176.0" r="176.0" fill="none" stroke="#14171c" stroke-width="1"/>
-    <line x1="0" y1="688.0" x2="1200" y2="688.0" stroke="#14171c" stroke-width="1"/>
-  </g>
-  <text x="72.0" y="744.0" font-family="Georgia, serif" font-size="40.0" fill="#14171c">Grain</text>
-  <text x="72.0" y="100.0" font-family="Georgia, serif" font-size="36.0" fill="#14171c" opacity="0.6">photo 02</text>
-</svg>

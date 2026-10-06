@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" width="900" height="1125">
-  <rect width="900" height="1125" fill="#e9dfe0"/>
-  <g opacity="0.5">
-    <circle cx="702.0" cy="247.5" r="198.0" fill="none" stroke="#14171c" stroke-width="1"/>
-    <line x1="0" y1="967.5" x2="900" y2="967.5" stroke="#14171c" stroke-width="1"/>
-  </g>
-  <text x="54.0" y="1046.25" font-family="Georgia, serif" font-size="45.0" fill="#14171c">Litoral</text>
-  <text x="54.0" y="130.5" font-family="Georgia, serif" font-size="40.5" fill="#14171c" opacity="0.6">photo 05</text>
-</svg>
