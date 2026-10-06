@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>artderegarderlemonde</title>
+  <meta name="description" content="Sillage — série photographique, 2024.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+  <header class="site-header container">
+    <div class="site-header__row">
+
+      <p class="site-title">
+        <a href="index.html">corentin maricot</a>
+      </p>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+
+        <button class="menu-toggle"
+                type="button"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul>
+          <li><a href="graphisme.html">graphisme</a></li>
+          <li><a href="photographies.html">photographies</a></li>
+          <li><a href="illustrations.html">illustrations</a></li>
+          <li><a href="a-propos.html">infos</a></li>
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+  <h1 class="project-header__title">l'art de regarder le monde</h1>
+
+    <ul class="project-gallery" id="project-gallery">
+      <li class="project-gallery__item"><img src="images/artderegarderlemonde/2.webp" alt="Sillage, photo 1" loading="lazy"></li>
+      <li class="project-gallery__item"><img src="images/artderegarderlemonde/3.webp" alt="Sillage, photo 3" loading="lazy"></li>
+            <li class="project-gallery__item"><img src="images/artderegarderlemonde/8.webp" alt="Sillage, photo 5" loading="lazy"></li>
+      <li class="project-gallery__item"><img src="images/artderegarderlemonde/4.webp" alt="Sillage, photo 4" loading="lazy"></li>
+      <li class="project-gallery__item"><img src="images/artderegarderlemonde/5.webp" alt="Sillage, photo 5" loading="lazy"></li>
+      <li class="project-gallery__item"><img src="images/artderegarderlemonde/7.webp" alt="Sillage, photo 5" loading="lazy"></li>
+      <li class="project-gallery__item"><img src="images/artderegarderlemonde/6.webp" alt="Sillage, photo 5" loading="lazy"></li>
+      <li class="project-gallery__item"><img src="images/artderegarderlemonde/9.webp" alt="Sillage, photo 5" loading="lazy"></li>
+      <li class="project-gallery__item"><img src="images/artderegarderlemonde/10.webp" alt="Sillage, photo 5" loading="lazy"></li>
+    </ul>
+
+    <div class="project-header__grid">
+      <dl class="project-header__meta">
+        <dd>l'art de regarder le monde</dd>
+      </dl>
+      <p class="project-header__text">
+Rédaction littéraire et mise en forme graphique dans le cadre d'un mémoire de recherche en
+4ME année à l'ENSAD. Que se passe-t-il si toutes les étapes de la création d'un livre n'étaient
+réalisé que par un seul créateur ? Dessins des lettres, des caractères typographiques, des
+mots, des phrases, des paragraphes, de la mise en page et des couvertures.
+      </p>
+    </div>
+
+  </main>
+
+<section class="related-projects container">
+
+  <h2 class="related-projects__title">
+    (+)
+  </h2>
+
+  <div class="related-projects__grid"></div>
+
+</section>
+
+  <p class="site-pied">
+        <a href="index.html">corentin maricot</a>
+      </p>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> corentin maricot</p>
+    <div class="site-footer__links">
+      <a href="#" id="copy-email">Email</a>
+      <a href="https://www.instagram.com/corentin.maricot.graphisme/?hl=fr">Instagram </a>
+      <a href="https://www.linkedin.com/in/corentin-maricot-781a53235">LinkedIn</a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightbox-close">Fermer ✕</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const siteNav = document.querySelector('.site-nav');
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('is-open');
+
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+
+<script>
+
+const projets = [
+  {
+    nom: "catalogue du web",
+    url: "catalogueduweb.html",
+    image: "images/catalogueduweb/01.webp"
+  },
+  {
+    nom: "fulica mono",
+    url: "fulicamono.html",
+    image: "images/fulicamono/2.webp"
+  },
+  {
+    nom: "archives Est",
+    url: "archivesest.html",
+    image: "images/archivesest/2.webp"
+  },
+  {
+    nom: "encre seiche",
+    url: "encreseiche.html",
+    image: "images/encreseiche/6.webp"
+  },
+  {
+    nom: "Projet 5",
+    url: "projet-6.html",
+    image: "images/projet-5.jpg"
+  }
+];
+
+const grille = document.querySelector(".related-projects__grid");
+
+const aleatoires = [...projets]
+  .sort(() => Math.random() - 0.5)
+  .slice(0, 4);
+
+aleatoires.forEach(projet => {
+
+  const carte = document.createElement("a");
+
+  carte.className = "related-project";
+  carte.href = projet.url;
+
+  carte.innerHTML = `
+    <div class="related-project__image">
+      <img src="${projet.image}" alt="${projet.nom}">
+    </div>
+    <h3>${projet.nom}</h3>
+  `;
+
+  grille.appendChild(carte);
+});
+
+</script>
+<script>
+  const copyEmail = document.getElementById("copy-email");
+
+  copyEmail.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    navigator.clipboard.writeText("maricotpro@gmail.com");
+
+    copyEmail.textContent = "Copié !";
+
+    setTimeout(() => {
+      copyEmail.textContent = "Email";
+    }, 1500);
+  });
+</script>
+</body>
+</html>
