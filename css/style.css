@@ -92,7 +92,7 @@ body {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  filter: grayscale(100%);
+ filter: grayscale(100%);
 }
 
 .hero::after {
@@ -201,7 +201,7 @@ body {
 
   transform: translate(0%, 0%) rotate(-10deg);
 
-  z-index: 1000;
+  z-index: 999;
 }
 
 .site-title::before {
@@ -767,4 +767,42 @@ body {
   .related-project h3 {
     font-size: 16px;
   }
+}
+
+
+
+/* ---------- Animation d'introduction ---------- */
+
+#intro-animation {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: white;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+#intro-animation.is-fading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#intro-animation img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: clamp(160px, 25vw, 240px);
+  height: auto;
+  max-width: none;
+  transform-origin: center center;
+  will-change: transform;
+
+  backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
+}
+
+/* L'introduction est retirée à la fin */
+#intro-animation.is-finished {
+  display: none;
 }
